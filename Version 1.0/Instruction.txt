@@ -1,0 +1,37 @@
+Project Mercury V1.0 Firmware V0.1
+//			Very simple 8-bits MCU WAV PLAYER
+//						  _____________________________		
+//			Handle next: |Sample rate|Channels|PSM type|
+//						 |-----------|--------|--------|
+//						 |32000		 |    1   |uint 8  |
+//						 |-----------|--------|--------|
+//					     |24000		 |	  1	  |uint 8  |
+//						 |-----------|--------|--------|
+//						 |22100		 |	  1   |uint 8  |				
+//						 |-----------|--------|--------|
+//						 |16000		 |  1, 2  |uint 8  |
+//						 |-----------|--------|--------|
+//						 |8000		 |  1, 2  |uint 8  |
+//						 |___________|________|________|
+//
+//			Features:
+//			Auto playing mode(APM)
+//				3 control buttons: Prev, Play/Pause, Next
+//				Buttons duplicates by UART commands: Prev = 'B', Play/Pause = 'P', Next = 'N'
+//				If you want to activate this mode press any key or send UARD command('B', 'P' or 'N')
+//			Command controllable playing mode(CCPM)
+//				Available UART commands:
+//				'S' - Start line
+//				'.' - End line and play
+//				'O' - Enable output mode
+//				'F' - Finish CCPM
+//				'R' - Read CCPM DIR  
+//				'<' - Stop line reading
+//				'B' - Previous track (only for APM)
+//				'P' - Play / Pause	 (only for APM)
+//				'N' - Next track	 (only for APM)
+//			If you want to enable CCPM mode you need send 'S' command and then name (without.WAV) and '.' - end line command
+//			after, file with chosen name will play from CCPM dir on SD card. If the file will finish player will return 'F'.
+//			If file with chosen name is not existed, player will return 'E' and will go to IDLE state.
+//			If you want to abort CCPM playing send 'F' command.
+//			If you want to abort CCPM playing send 'F' command.
