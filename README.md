@@ -14,12 +14,14 @@ Description:
   One and two channels(8000 - 32000 Samples/s for 1 Channel and 8000 - 16000 Samples/s for 2 channels).
   Works only with SD (cads who has les then 2GB memory) In ATMEGA8a not enough memory to add SDHC maintaining.
   Two playing modes APM (plays files only from root dir) and CCPM mode (plays files from CCPM dir, controled only by UART)
-
+  
 Features:
+
 	Auto playing mode(APM)
 		3 control buttons: Prev, Play/Pause, Next
 		Buttons duplicates by UART commands: Prev = 'B', Play/Pause = 'P', Next = 'N'
 		If you want to activate this mode press any key or send UARD command('B', 'P' or 'N')
+		
 	Command controllable playing mode(CCPM)
 		Available UART commands:
 		'S' - Start line
