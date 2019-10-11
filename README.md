@@ -7,6 +7,8 @@ Description:
    - File size;
    - Sample rate;
    - Channels amount;
+   
+   
   This parameters automaticaly applies befor file start play.
   Can works only with 8-bit unsigned int PCM sound;
   One and two channels(8000 - 32000 Samples/s for 1 Channel and 8000 - 16000 Samples/s for 2 channels).
