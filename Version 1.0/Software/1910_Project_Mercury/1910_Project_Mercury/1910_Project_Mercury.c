@@ -634,7 +634,10 @@ void decSize(WAV* obj)						// Decrement file size
 
 void setSize(WAV* obj, char *buffer)		// Set file size 
 {
-	uint32_t temp = ((uint32_t)(*(buffer+7))|(((uint32_t)*(buffer+6))<<8)|(((uint32_t)*(buffer+5))<<16)|(((uint32_t)*(buffer+4))<<24));
+	//Bug: improper file size reading
+	//uint32_t temp = ((uint32_t)(*(buffer+7))|(((uint32_t)*(buffer+6))<<8)|(((uint32_t)*(buffer+5))<<16)|(((uint32_t)*(buffer+4))<<24));
+	uint32_t temp = ((uint32_t)(*(buffer+4))|(((uint32_t)*(buffer+5))<<8)|(((uint32_t)*(buffer+6))<<16)|(((uint32_t)*(buffer+7))<<24));
+	
 	obj->size = (uint16_t)(temp>>9);
 }
 
